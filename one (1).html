@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    function validation(){
+
+        var name= document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var phone =  document.getElementById('phone').value;
+        var Address = document.getElementById('Address').value;
+        var pin = document.getElementById('Pincode').value;
+        var dat = document.getElementById('birthday').value;
+
+        if(name==""){
+            document.getElementById('namec').innerHTML = "**please correctly fill this field";
+            return false;
+        }
+        if(email==""){
+            document.getElementById('emailc').innerHTML = "**please correctly fill this field";
+            return false;
+        }
+        if(Address==""){
+            document.getElementById('Addressc').innerHTML = "**please correctly fill this field";
+            return false;
+        }
+        if(pin.length!=6){
+            document.getElementById('Pincodec').innerHTML = "**please correctly fill this field";
+            return false;
+        }
+        if(dat==""){
+            document.getElementById('datec').innerHTML = "**please correctly fill this field";
+            return false;
+        }
+        if(phone.length!=10){
+            document.getElementById('phonec').innerHTML = "**please correctly fill this field";
+            return false;
+        }
+        register(event)
+        display_name.innerHTML = r_name;
+        display_email.innerHTML = r_email;
+        display_phone.innerHTML = r_phone;
+        display_address.innerHTML = r_address;
+        display_pincode.innerHTML = r_pincode;
+        display_birthday.innerHTML = r_birthday;
+    }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body style="background-color:powderblue;">
+        <form action="#" onsubmit="return validation()" class='class="form-control" my-5'>
+            <h4 class="text-center my-5">Registration Form</h4>
+            <!-- Input from User -->
+           
+            <input type="text"class="form-control" placeholder='Name' id="name" required/>
+            <span id='namec' class="text-danger font-weight-bolt"></span><br>
+            <input type="email"class="form-control" placeholder='Email' id="email" required/>
+            <span id='emailc' class="text-danger font-weight-bolt"></span><br>
+            <input type="date" class="form-control"id="birthday" name="birthday" required/><span id='datec' class="text-danger font-weight-bolt"></span><br>
+            <input type="Number"class="form-control"placeholder='Phone No' id="phone" size="10" required/>
+            <span id='phonec' class="text-danger font-weight-bolt"></span><br>
+            <input type="text"class="form-control"placeholder='Address' id="Address" required/>
+            <span id='Addressc' class="text-danger font-weight-bolt"></span><br>
+            <input type="Number"class="form-control"placeholder='Pincode' id="Pincode" size="" required/>
+            <span id='Pincodec' class="text-danger font-weight-bolt"></span><br>
+
+           <center> <input id='btn' class="btn btn-primary mb-2"type="submit" placeholder='Register' >
+       </center> 
+       </form>
+        <!-- Output Form Details -->
+        <div class='text-center mx-auto'>
+        <p>Name :<span id="display_name"></span></p>
+        <p>Email :<span id="display_email"></span></p>
+        <p>Phone No.: <span id="display_phone"></span></p>
+        <p>Address :<span id="display_address"></span></p>
+        <p>Pincode : <span id="display_pincode"></span></p>
+        <p>DOB : <span id="display_birthday"></span></p></div>
+    
+    <script>
+    const register = function (event) {
+    // Receive user input
+    let r_name = document.querySelector("#name").value;
+    let r_email = document.querySelector("#email").value;
+    let r_phone = document.querySelector("#phone").value;
+    let r_address = document.querySelector("#Address").value;
+    let r_pincode = document.querySelector("#Pincode").value;
+    let r_birthday = document.querySelector("#birthday").value;
+    const errorElement = document.getElementById('error')
+    // Output on page
+    display_name.innerHTML = r_name;
+    display_email.innerHTML = r_email;
+    display_phone.innerHTML = r_phone;
+    display_address.innerHTML = r_address;
+    display_pincode.innerHTML = r_pincode;
+    display_birthday.innerHTML = r_birthday;
+    
+
+    event.preventDefault();
+    
+    };
+    
+    </script>
+</body>
+</html>
+
